@@ -38,6 +38,17 @@ body {
   opacity: 0.15;
 }
 
+#cmd-input {
+  background: transparent;
+  border: none;
+  color: #4af626;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1em;
+  flex-grow: 1;
+  margin-left: 8px;
+  outline: none;
+}
+
 .prompt {
   color: #00d1ff;
   font-weight: bold;
