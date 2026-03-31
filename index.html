@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J. Światły - Deep Tech Architect</title>
+    <style>
+        body {
+            background-color: #011627; 
+            color: #4AF626;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        #terminal {
+            width: 80%;
+            max-width: 900px;
+            height: 70vh;
+            background-color: #010c14; 
+            border: 2px solid #1a3c5a; 
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            overflow-y: auto; 
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        #terminal::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+            background-size: 100% 4px;
+            z-index: 2;
+            pointer-events: none;
+            opacity: 0.15;
+        }
+
+        .prompt {
+            color: #00d1ff; 
+            font-weight: bold;
+        }
+
+        .output {
+            margin-bottom: 15px;
+            display: block;
+            white-space: pre-wrap; 
+        }
+
+        .command {
+            color: #4AF626; 
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 1.2em;
+            background-color: #4AF626;
+            animation: blink 1s infinite;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        a {
+            color: #ff9f43; 
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="terminal">
+    <div>
+        <span class="prompt">[user@holiano-dev ~]$</span> <span class="command">init_session --deep-marine</span>
+    </div>
+    <div class="output">
+Initializing Connection...
+Connection established. Welcome to Holiano.dev - Vision in Depth.
+Type 'help' for available commands.
+    </div>
+
+    <div>
+        <span class="prompt">[user@holiano-dev ~]$</span> <span class="command">whoami</span>
+    </div>
+    <div class="output">
+> Name: J. Światły
+> Role: Deep Tech Architect / Creative Developer
+> Status: Online
+    </div>
+
+    <div>
+        <span class="prompt">[user@holiano-dev ~]$</span> <span class="command">ls_skills</span>
+    </div>
+    <div class="output">
+Available Modules:
+  [A] Python, Docker, Cloud Infra
+  [B] UI/UX Design (Marine Aesthetics)
+  [C] Embedded Systems & Sonar Data Visualisation
+    </div>
+
+    <div>
+        <span class="prompt">[user@holiano-dev ~]$</span> <span class="command">cat credo.txt</span>
+    </div>
+    <div class="output">
+"Build fast. Go deep." - Our philosophy for tech exploration.
+    </div>
+
+    <div>
+        <span class="prompt">[user@holiano-dev ~]$</span> <span class="command">connect --status</span>
+    </div>
+    <div class="output">
+Connect via:
+  Email:   <a href="mailto:dev@holiano.dev">dev@holiano.dev</a>
+  GitHub:  <a href="https://github.com/jswiatly" target="_blank">@jswiatly</a>
+  Project: <a href="https://holiano.dev" target="_blank">holiano.dev</a> (Under Construction)
+    </div>
+
+    <div>
+        <span class="prompt">[user@holiano-dev ~]$</span><span class="cursor"></span>
+    </div>
+</div>
+
+</body>
+</html>
