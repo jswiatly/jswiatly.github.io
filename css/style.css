@@ -38,6 +38,11 @@ body {
   opacity: 0.15;
 }
 
+#input-line {
+  display: flex;
+  align-items: center;
+}
+
 #cmd-input {
   background: transparent;
   border: none;
