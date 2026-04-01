@@ -86,6 +86,12 @@ body {
   white-space: nowrap;
 }
 
+.output {
+  margin: 5px 0;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
 .command {
   color: var(--text-main);
 }
