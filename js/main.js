@@ -43,7 +43,7 @@ function processCommand(rawCmd) {
     appendToHistory(`<div class="output">${commands[cmd]}</div>`);
   } else {
     appendToHistory(
-      `<div class="output">UNKNOWN: ${safeCmd}. TYPE HELP.</div>`,
+      `<div class="output">UNKNOWN: ${safeCmd}. Type help.</div>`,
     );
   }
 }

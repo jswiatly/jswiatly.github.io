@@ -19,6 +19,11 @@ body {
   overflow: hidden;
 }
 
+.prompt {
+  color: #00d1ff;
+  font-weight: bold;
+}
+
 #terminal {
   width: 80%;
   max-width: 900px;
