@@ -27,48 +27,5 @@
         />
       </div>
     </main>
-
-    <script>
-      const commands = {
-        help: "<br> - <b>whoami</b> <br> - <b>skills</b> <br> - <b>contact</b> <br> - <b>clear</b>",
-        whoami:
-          "> Name: J. Światły <br>> Role: Deep Tech Architect <br>> Status: Diving in code...",
-        skills:
-          "Available Modules: [A] C, C++, C# [B] Systems Design [C] Embedded Systems & Low-level Development",
-        contact:
-          'Mail :<a href="mailto:dev@holiano.dev">dev@holiano.dev</a> <br> GitHub: <a href="https://github.com/jswiatly" target="_blank">@jswiatly</a>',
-      };
-
-      const inputField = document.getElementById("cmd-input");
-      const historyDiv = document.getElementById("history");
-      const terminal = document.getElementById("terminal");
-
-      terminal.addEventListener("click", () => {
-        inputField.focus();
-      });
-
-      inputField.addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
-          const rawCmd = inputField.value;
-          const cmd = rawCmd.trim().toLowerCase();
-
-          if (cmd !== "") {
-            historyDiv.innerHTML += `<div><span class="prompt">[user@holiano-dev ~]$</span> <span class="command">${rawCmd}</span></div>`;
-            if (cmd === "clear") {
-              historyDiv.innerHTML =
-                "Initializing Connection... Connection established. Welcome to Holiano.dev - Vision in Depth. Type 'help' for available commands.";
-            } else if (commands[cmd]) {
-              historyDiv.innerHTML += `<div class="output">${commands[cmd]}</div>`;
-            } else {
-              historyDiv.innerHTML += `<div class="output">UNKNOWN: ${cmd}. TYPE HELP.</div>`;
-            }
-          }
-
-          inputField.value = "";
-
-          terminal.scrollTop = terminal.scrollHeight;
-        }
-      });
-    </script>
   </body>
 </html>
