@@ -34,7 +34,7 @@ function processCommand(rawCmd) {
 
   const safeCmd = escapeHTML(rawCmd);
   appendToHistory(
-    '<div><span class="prompt">[user@holiano-dev ~]$</span> <span class="command">${safeCmd}</span></div>',
+    `<div><span class="prompt">[user@holiano-dev ~]$</span> <span class="command">${safeCmd}</span></div>`,
   );
 
   if (cmd === "clear") {
