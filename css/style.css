@@ -60,9 +60,6 @@ body {
 }
 
 .output {
-  margin-bottom: 15px;
-  display: block;
-  white-space: pre-wrap;
 }
 
 .command {
