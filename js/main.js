@@ -38,7 +38,7 @@ function processCommand(rawCmd) {
   );
 
   if (cmd === "clear") {
-    DOM.historyDiv.innerHTML = `<div><span class="output">${INITIAL_MESSAGE}</div>`;
+    DOM.historyDiv.innerHTML = `<div class="output">${INITIAL_MESSAGE}</div>`;
   } else if (commands[cmd]) {
     appendToHistory(`<div class="output">${commands[cmd]}</div>`);
   } else {
@@ -52,8 +52,8 @@ DOM.terminal.addEventListener("click", () => {
   DOM.inputField.focus();
 });
 
-DOM.terminal.addEventListener("keydown", (event) => {
-  if (event.key == "Enter") {
+DOM.inputField.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
     processCommand(DOM.inputField.value);
     DOM.inputField.value = "";
   }
