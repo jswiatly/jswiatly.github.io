@@ -35,10 +35,7 @@ function processCommand(rawCmd) {
   const safeCmd = escapeHTML(rawCmd);
 
   appendToHistory(
-    `<div class="terminal-line">
-      <span class="prompt">[user@holiano-dev ~]$</span> 
-      <span class="command" style="margin-left: 8px;">${safeCmd}</span>
-    </div>`,
+    `<div class="terminal-line"><span class="prompt">[user@holiano-dev ~]$</span><span class="command" style="margin-left: 8px;">${safeCmd}</span></div>`,
   );
 
   if (cmd === "clear") {
@@ -47,7 +44,7 @@ function processCommand(rawCmd) {
     appendToHistory(`<div class="output">${commands[cmd]}</div>`);
   } else {
     appendToHistory(
-      `<div class="output">UNKNOWN: ${safeCmd}. Type help.</div>`,
+      `<div class="output">UNKNOWN: ${safeCmd}. Type 'help'.</div>`,
     );
   }
 }
