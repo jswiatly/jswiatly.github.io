@@ -54,7 +54,12 @@
           if (cmd !== "") {
             historyDiv.innerHTML += `<div><span class="prompt">[user@holiano-dev ~]$</span> <span class="command">${rawCmd}</span></div>`;
             if (cmd === "clear") {
-              historyDiv.innerHTML = "output";
+              const outputDiv = historyDiv.querySelector(".output");
+              historyDiv.innerHTML = "";
+
+              if (outputDiv) {
+                historyDiv.appendChild(outputDiv);
+              }
             } else if (commands[cmd]) {
               historyDiv.innerHTML += `<div class="output">${commands[cmd]}</div>`;
             } else {
