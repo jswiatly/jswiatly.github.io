@@ -54,12 +54,8 @@
           if (cmd !== "") {
             historyDiv.innerHTML += `<div><span class="prompt">[user@holiano-dev ~]$</span> <span class="command">${rawCmd}</span></div>`;
             if (cmd === "clear") {
-              const outputDiv = historyDiv.querySelector(".output");
-              historyDiv.innerHTML = "";
-
-              if (outputDiv) {
-                historyDiv.appendChild(outputDiv);
-              }
+              historyDiv.innerHTML =
+                "Initializing Connection... Connection established. Welcome to Holiano.dev - Vision in Depth. Type 'help' for available commands.";
             } else if (commands[cmd]) {
               historyDiv.innerHTML += `<div class="output">${commands[cmd]}</div>`;
             } else {
