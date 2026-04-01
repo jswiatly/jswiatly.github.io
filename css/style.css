@@ -1,7 +1,16 @@
+:root {
+  --bg-body: #011627;
+  --bg-terminal: #010c14;
+  --border-color: #1a3c5a;
+  --text-main: #4af626;
+  --text-link: #ff9f43;
+  --font-base: "Courier New", Courier, monospace;
+}
+
 body {
-  background-color: #011627;
-  color: #4af626;
-  font-family: "Courier New", Courier, monospace;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  font-family: var(--font-base);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,12 +18,13 @@ body {
   margin: 0;
   overflow: hidden;
 }
+
 #terminal {
   width: 80%;
   max-width: 900px;
   height: 70vh;
-  background-color: #010c14;
-  border: 2px solid #1a3c5a;
+  background-color: var(--bg-terminal);
+  border: 2px solid var(--border-color);
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   overflow-y: auto;
@@ -27,10 +37,7 @@ body {
   content: " ";
   display: block;
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  inset: 0;
   background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
   background-size: 100% 4px;
   z-index: 2;
@@ -41,13 +48,14 @@ body {
 #input-line {
   display: flex;
   align-items: center;
+  margin-top: 10px;
 }
 
 #cmd-input {
   background: transparent;
   border: none;
-  color: #4af626;
-  font-family: "Courier New", Courier, monospace;
+  color: var(--text-main);
+  font-family: var(--font-base);
   font-size: 1em;
   flex-grow: 1;
   margin-left: 8px;
@@ -55,15 +63,12 @@ body {
 }
 
 .prompt {
-  color: #00d1ff;
+  color: var(--text-main);
   font-weight: bold;
 }
 
-.output {
-}
-
 .command {
-  color: #4af626;
+  color: var(--text-main);
 }
 
 .cursor {
