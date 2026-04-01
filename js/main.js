@@ -22,3 +22,40 @@ function escapeHTML(str) {
   div.textContent = str;
   return div.innerHTML;
 }
+
+function appendToHistory(htmlContent) {
+  DOM.historyDiv.insertAdjacentHTML("beforeend", htmlContent);
+  DOM.terminal.scrollTop = DOM.terminal.scrollHeight;
+}
+
+function processCommand(rawCmd) {
+  const cmd = rawCmd.trim().toLowerCase();
+  if (!cmd) return;
+
+  const safeCmd = escapeHTML(rawCmd);
+  appendToHistory(
+    '<div><span class="prompt">[user@holiano-dev ~]$</span> <span class="command">${safeCmd}</span></div>',
+  );
+
+  if (cmd === "clear") {
+    DOM.historyDiv.innerHTML =
+      '<div><span class="output">${INITIAL_MESSAGE}</div>';
+  } else if (commands[cmd]) {
+    appendToHistory(`<div class="output">${commands[cmd]}</div>`);
+  } else {
+    appendToHistory(
+      `<div class="output">UNKNOWN: ${safeCmd}. TYPE HELP.</div>`,
+    );
+  }
+}
+
+DOM.terminal.addEventListener("click", () => {
+  DOM.inputField.focus();
+});
+
+DOM.terminal.addEventListener("keydown", (event) => {
+  if (event.key == "Enter") {
+    processCommand(DOM.inputField.value);
+    DOM.inputField.value = "";
+  }
+});
