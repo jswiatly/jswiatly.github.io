@@ -3,6 +3,7 @@
   --bg-terminal: #010c14;
   --border-color: #1a3c5a;
   --text-main: #4af626;
+  --text-prompt: #00d1ff;
   --text-link: #ff9f43;
   --font-base: "Courier New", Courier, monospace;
 }
@@ -72,6 +73,8 @@ body {
   padding: 0;
   margin: 0;
   outline: none;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
 }
 
 .prompt {
