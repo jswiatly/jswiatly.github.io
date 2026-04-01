@@ -38,8 +38,7 @@ function processCommand(rawCmd) {
   );
 
   if (cmd === "clear") {
-    DOM.historyDiv.innerHTML =
-      '<div><span class="output">${INITIAL_MESSAGE}</div>';
+    DOM.historyDiv.innerHTML = `<div><span class="output">${INITIAL_MESSAGE}</div>`;
   } else if (commands[cmd]) {
     appendToHistory(`<div class="output">${commands[cmd]}</div>`);
   } else {
