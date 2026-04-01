@@ -8,7 +8,7 @@ const commands = {
   skills:
     "Available Modules: [A] C, C++, C# [B] Systems Design [C] Embedded Systems & Low-level Development",
   contact:
-    'Mail:<a href="mailto:dev@holiano.dev">dev@holiano.dev</a> <br>' +
+    'Mail: <a href="mailto:dev@holiano.dev">dev@holiano.dev</a> <br>' +
     'GitHub: <a href="https://github.com/jswiatly" target="_blank">@jswiatly</a>',
 };
 
