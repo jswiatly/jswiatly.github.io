@@ -90,6 +90,7 @@ body {
   margin: 5px 0;
   color: var(--text-main);
   line-height: 1.4;
+  white-space: pre-wrap;
 }
 
 .command {
