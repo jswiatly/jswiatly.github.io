@@ -2,7 +2,7 @@ const INITIAL_MESSAGE =
   "Initializing Connection... Connection established. Welcome to Holiano.dev - Vision in Depth. Type 'help' for available commands.";
 
 const commands = {
-  help: "- <b>whoami</b> <br> - <b>skills</b> <br> - <b>contact</b> <br> - <b>clear</b>",
+  help: "<b>whoami</b>  - About me<br><b>skills</b>  - Technical stack<br><b>contact</b> - Get in touch<br><b>clear</b>   - Reset terminal",
   whoami:
     "> Name: J. Światły <br>> Role: Deep Tech Architect <br>> Status: Diving in code...",
   skills:
