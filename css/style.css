@@ -1,6 +1,7 @@
 :root {
   --bg-body: #011627;
   --bg-terminal: #010c14;
+  --bg-terminal-deep: #00050a; /* Głębsza czerń */
   --border-color: #1a3c5a;
   --text-main: #4af626;
   --text-prompt: #00d1ff;
@@ -20,11 +21,6 @@ body {
   overflow: hidden;
 }
 
-.prompt {
-  color: #00d1ff;
-  font-weight: bold;
-}
-
 #terminal {
   width: 80%;
   max-width: 900px;
@@ -37,6 +33,16 @@ body {
   padding: 20px;
   box-sizing: border-box;
   position: relative;
+  transition:
+    background-color 0.5s ease,
+    border-color 0.5s ease;
+}
+
+/* Klasa aktywowana przez 'vision' */
+#terminal.deep-scan {
+  background-color: var(--bg-terminal-deep);
+  border-color: #ff0055; /* Karmazynowa ramka */
+  box-shadow: 0 0 40px rgba(255, 0, 85, 0.4);
 }
 
 #terminal::before {
@@ -60,10 +66,6 @@ body {
   padding: 2px 0;
 }
 
-#input-line {
-  margin-top: 0;
-}
-
 #cmd-input {
   background: transparent;
   border: none;
@@ -72,12 +74,9 @@ body {
   font-size: 1em;
   flex-grow: 1;
   outline: none;
-
   padding: 0;
   margin: 0;
   line-height: inherit;
-  height: auto;
-  vertical-align: top;
 }
 
 .prompt {
@@ -97,14 +96,20 @@ body {
   color: var(--text-main);
 }
 
-.cursor {
-  display: inline-block;
-  width: 10px;
-  height: 1.2em;
-  background-color: #4af626;
+a {
+  color: var(--text-link);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Nowy animowany kursor */
+#cmd-input::after {
+  content: "█";
+  color: var(--text-main);
   animation: blink 1s infinite;
-  vertical-align: middle;
-  margin-left: 5px;
+  margin-left: 2px;
 }
 
 @keyframes blink {
@@ -117,14 +122,6 @@ body {
   }
 }
 
-a {
-  color: #ff9f43;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -134,4 +131,11 @@ a:hover {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+/* Dodatkowy styl dla ASCII, aby zachować formatowanie */
+.ascii-art {
+  white-space: pre;
+  color: #ff0055; /* Kolor 'wizji' */
+  line-height: 1;
 }
